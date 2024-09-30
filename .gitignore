@@ -1,0 +1,12 @@
+node_modules
+jspm_packages
+.serverless
+.webpack
+.webpackCache
+.env*
+.build/
+build
+.build
+.vscode/
+.DS_Store
+serverless.yml

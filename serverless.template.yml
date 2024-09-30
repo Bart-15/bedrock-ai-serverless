@@ -1,0 +1,26 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: bedrock-service
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+  iam:
+    role:
+      statements: ${file(src/config/iam/IamRoleStatements.yml)}
+
+plugins:
+  # - serverless-webpack # serverless webpack plugin
+  # - serverless-plugin-typescript
+  - serverless-offline
+
+resources:
+  Resources:
+
+functions:
+  bedrockStreamResponse:
+    handler: src/handlers/bedrockStreamResponse.handler
+    url:
+      invokeMode: RESPONSE_STREAM
+    timeout: 120

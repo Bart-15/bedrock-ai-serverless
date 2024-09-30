@@ -1,0 +1,32 @@
+{
+  "name": "bedrock-ai-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node build/handler.js",
+    "local": "npm run build:live",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dashboard": "serverless",
+    "offline": "serverless offline",
+    "deploy": "serverless deploy",
+    "build": "tsc -p .",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.654.0",
+    "@types/aws-lambda": "^8.10.145",
+    "aws-lambda": "^1.0.7",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.3.3",
+    "serverless-offline": "^13.7.0",
+    "serverless-plugin-typescript": "^2.1.5",
+    "stream": "^0.0.3",
+    "typescript": "^5.5.4"
+  }
+}
